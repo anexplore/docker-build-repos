@@ -2,9 +2,8 @@ FROM centos:7
 MAINTAINER anexplore
 ENV REFRESHED_AT 2018-03-08
 
-RUN  cd /etc/yum.repos.d/ && \
+RUN yum -y install epel-release && cd /etc/yum.repos.d/ && \
     curl -O https://copr.fedorainfracloud.org/coprs/librehat/shadowsocks/repo/epel-7/librehat-shadowsocks-epel-7.repo && \
-    curl -O https://copr.fedorainfracloud.org/coprs/carlwgeorge/libsodium13/repo/epel-7/carlwgeorge-libsodium13-epel-7.repo && \
     yum install -y libsodium && \
     curl -O http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/m/mbedtls-2.7.0-1.el7.x86_64.rpm && \
     yum -y install mbedtls-2.7.0-1.el7.x86_64.rpm && rm mbedtls-2.7.0-1.el7.x86_64.rpm && \
