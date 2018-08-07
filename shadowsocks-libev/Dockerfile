@@ -5,8 +5,8 @@ ENV REFRESHED_AT 2018-03-08
 RUN yum -y install epel-release && cd /etc/yum.repos.d/ && \
     curl -O https://copr.fedorainfracloud.org/coprs/librehat/shadowsocks/repo/epel-7/librehat-shadowsocks-epel-7.repo && \
     yum install -y libsodium && \
-    curl -O http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/m/mbedtls-2.7.0-1.el7.x86_64.rpm && \
-    yum -y install mbedtls-2.7.0-1.el7.x86_64.rpm && rm mbedtls-2.7.0-1.el7.x86_64.rpm && \
+    curl -O http://dl.fedoraproject.org/pub/epel/testing/7/x86_64/Packages/m/mbedtls-2.7.5-1.el7.x86_64.rpm && \
+    yum -y install mbedtls-2.7.5-1.el7.x86_64.rpm && rm mbedtls-2.7.5-1.el7.x86_64.rpm && \
     ln -s /lib64/libmbedcrypto.so.1 /lib64/libmbedcrypto.so.0 && \
     yum install -y shadowsocks-libev
 
