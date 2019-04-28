@@ -10,4 +10,4 @@ RUN cnpm install -g react@^15.0.0
 RUN echo "Y" |anyproxy-ca && cp ~/.anyproxy/certificates/rootCA.crt /etc/pki/ca-trust/source/anchors/ \
      && update-ca-trust 
 EXPOSE 8001 8002
-ENTRYPOINT anyproxy
+ENTRYPOINT ["anyproxy"]
